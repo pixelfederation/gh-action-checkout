@@ -1,0 +1,33 @@
+{
+  "name": "@pixelfederation/gh-action-checkout",
+  "version": "1.0.1",
+  "description": "git clone action",
+  "repository": "https://github.com/gh-action-checkout/",
+  "author": "Tomas Hulata <thulata@pixelfederation.com>",
+  "license": "MIT",
+  "scripts": {
+    "fmt": "prettier --write .",
+    "fmt:check": "prettier --check .",
+    "typecheck": "tsc",
+    "lint": "eslint \"**/*.ts\" --cache",
+    "build": "esbuild src/git/main.ts --bundle --outdir=. --target=node18 --platform=node"
+  },
+  "dependencies": {
+    "@actions/core": "v1.10.0",
+    "@actions/exec": "1.1.1",
+    "@actions/io": "1.1.2",
+    "action-docs": "^1.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.0",
+    "@typescript-eslint/eslint-plugin": "4.23.0",
+    "@typescript-eslint/parser": "4.23.0",
+    "esbuild": "0.8.34",
+    "eslint": "7.20.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.3.1",
+    "prettier": "2.2.1",
+    "typescript": "4.2.4"
+  }
+}

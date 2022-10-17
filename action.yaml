@@ -1,0 +1,12 @@
+name: Git Checkout Action
+author: thulata@pixelfederation.com
+description: A action for cloning git repositories.
+
+inputs:
+  repositories:
+    description: 'Repository owner and name. Eg: pixelfederation/gh-action-checkout'
+    default: |
+      ${{ github.repository }} | main | . | 1
+runs:
+  using: node18
+  main: main.js
