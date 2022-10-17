@@ -1,8 +1,7 @@
 name: Main workflow
 
 on:
-  - pull_request
-  - push
+  - workflow_dispatch
 
 jobs:
   build:
@@ -28,7 +27,7 @@ jobs:
             kubernetes/ingress-nginx/ | main | k3 | 10
 
 
-      - name: clone 
+      - name: clone
         id: clonetest
         uses: ./
         with:

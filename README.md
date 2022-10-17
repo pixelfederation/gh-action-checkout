@@ -7,11 +7,11 @@ A action for cloning git repositories.
 | parameter | description | required | default |
 | - | - | - | - |
 | directory | Working directory | `false` | . |
-| repositories | Repository owner and name eg: pixelfederation/gh-action-checkout \| ${{ github.repository }} \| main \| . \| 10 \| ${{ github.token }} | true | |
+| repositories | Repository owner and name eg: pixelfederation/gh-action-checkout \|  github.repository  \| main \| . \| 10 \|  github.token  | true | |
 | verbose | undefined | `false` | false |
 
-repostiories format is:  
-{repo name} | { branch or tag } | { destination dir} | OPTIONAL { depth } | OPTIONAL { auth token } 
+repositories format is:  
+`{repo name} | { branch or tag } | { destination dir} | OPTIONAL { depth } | OPTIONAL { auth token }`
 
 ## Examples
 with depth 10
