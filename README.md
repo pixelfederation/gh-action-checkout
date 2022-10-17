@@ -18,7 +18,7 @@ with depth 10
 ```yaml
       - name: clone test
         id: clonetest
-        uses: ./
+        uses: pixelfederation/gh-action-checkout@v0.0.1
         with:
           repositories: |
             kubernetes/ingress-nginx/ | main | ingress | 10
@@ -29,7 +29,7 @@ with token without depth
 ```yaml
       - name: clone again
         id: cloneagain
-        uses: ./
+        uses: pixelfederation/gh-action-checkout@v0.0.1
         with:
           repositories: |
             pxfd/Devops.Infra.tf-apps | master | tf-apps | | TOKEN
