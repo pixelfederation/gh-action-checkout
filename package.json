@@ -10,7 +10,7 @@
     "fmt:check": "prettier --check .",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.ts\" --cache",
-    "build": "esbuild src/git/main.ts --bundle --outdir=. --target=node18 --platform=node"
+    "build": "esbuild src/checkout/main.ts --bundle --outdir=. --target=node18 --platform=node"
   },
   "dependencies": {
     "@actions/core": "v1.10.0",

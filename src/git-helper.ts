@@ -17,8 +17,8 @@ export function getExecOpts(opt: object): object {
     return {out: out, err: err, options: options}
   }
 
-export async function git(rsyncArgs: Array): Promise {
+export async function shell(args: Array): Promise {
     const ci: ICommonInputs = await getCommonInputs();
     const opts = getExecOpts({cwd: ci.dir, env: { ...process.env }});
-    return exec.exec("bash", ['-c', rsyncArgs.join(' ')], opts.options);
+    return exec.exec("bash", ['-c', args.join(' ')], opts.options);
 }

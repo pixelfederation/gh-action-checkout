@@ -3,10 +3,16 @@ author: thulata@pixelfederation.com
 description: A action for cloning git repositories.
 
 inputs:
+  directory:
+    description: Working directory
+    required: false
+    default: "."
   repositories:
     description: 'Repository owner and name. Eg: pixelfederation/gh-action-checkout'
     default: |
-      ${{ github.repository }} | main | . | 1
+      ${{ github.repository }} | main | . | 1 | ${{ github.token }}
+  verbose:
+    default: false
 runs:
-  using: node18
+  using: node16
   main: main.js

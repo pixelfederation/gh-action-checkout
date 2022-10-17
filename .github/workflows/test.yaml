@@ -1,0 +1,38 @@
+name: Main workflow
+
+on:
+  - pull_request
+  - push
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-latest
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: clone test
+        id: clonetest
+        uses: ./
+        with:
+          repositories: |
+            kubernetes/ingress-nginx/ | main | k1 | 10
+            kubernetes/ingress-nginx/ | main | k2 | 10
+            kubernetes/ingress-nginx/ | main | k3 | 10
+
+
+      - name: clone 
+        id: clonetest
+        uses: ./
+        with:
+          repositories: |
+            kubernetes/ingress-nginx/ | main | k1 | 10
+            kubernetes/ingress-nginx/ | main | k2 | 10
+            kubernetes/ingress-nginx/ | main | k3 | 10
