@@ -14,10 +14,12 @@ export async function checkoutRepos(): Promise<void> {
         const [ repo, ref, dst, depth, token ] = repository.split("|").map(item => item.trim());
         let dirExist: boolean = false;
         try {
-            let data = await fs.promises.readFile(`${ci.dir}/${dst}/.git/config`, { encoding: "utf8"});
+            let dstPath = dst.startsWith('/') ? dst : `${ci.dir}/${dst}/`;
+            dstPath = dstPath.endsWith('/') ? dstPath : `${dstPath}/`;
+            let data = await fs.promises.readFile(`${dstPath}/.git/config`, { encoding: "utf8"});
             if(token && typeof token !== "undefined") {
                 data = data.replace(new RegExp("url\\s?=\\s?https://(.+@)?github.com", 'g'), `url = https://${token}@github.com`);
-                await fs.promises.writeFile(`${ci.dir}/${dst}/.git/config`, data, { encoding: "utf8"});
+                await fs.promises.writeFile(`${dstPath}.git/config`, data, { encoding: "utf8"});
             }
             dirExist = true;
         } catch (err) {
