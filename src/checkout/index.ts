@@ -35,8 +35,8 @@ export async function checkoutRepos(): Promise<void> {
             if (depth && typeof depth !== "undefined") {
                 gitArgs = gitArgs.concat(["--depth", depth]);
             }
+            gitArgs = gitArgs.concat([dst]);
         }
-        gitArgs = gitArgs.concat([dst]);
         promises.push(shell(gitArgs));
     }
     await Promise.all(promises)
