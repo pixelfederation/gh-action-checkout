@@ -7,5 +7,6 @@ export async function getCommonInputs(): Promise<ICommonInputs> {
     result.dir = core.getInput('directory', { required: false });
     result.repositories = core.getMultilineInput('repositories', { required: true });
     result.verbose = core.getBooleanInput('verbose', { required: false });
+    result.nocheckout = core.getBooleanInput('nocheckout', { required: false });
     return result;
 }

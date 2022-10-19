@@ -35,10 +35,12 @@ export async function checkoutRepos(): Promise<void> {
             try {
                 branch = HEAD.match(new RegExp(".+\\srefs/heads/(.*)",""))[1];
             } catch(err) {
-                console.log("Fail to read HEAD", err)
+                if (ci.verbose) {
+                    console.log("Fail to read HEAD", err);
+                }
             }
             gitArgs = ["cd", dst, ";"];
-            if (branch != ref) {
+            if (branch != ref || !ci.nocheckout ) {
                 gitArgs =  gitArgs.concat(["git", "checkout" , ref, ";"]);
             }
             gitArgs = gitArgs.concat([ "git", "fetch", ";", "git", "reset", "--hard", `origin/${ref}`, ";", "git", "clean", "-d", "-f"]);

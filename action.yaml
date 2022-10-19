@@ -13,6 +13,8 @@ inputs:
       ${{ github.repository }} | main | . | 1 | ${{ github.token }}
   verbose:
     default: false
+  nocheckout:
+    default: false
 runs:
   using: node16
   main: main.js

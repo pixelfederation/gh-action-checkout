@@ -8,7 +8,8 @@ A action for cloning git repositories.
 | - | - | - | - |
 | directory | Working directory | `false` | . |
 | repositories | Repository owner and name eg: pixelfederation/gh-action-checkout \|  github.repository  \| main \| . \| 10 \|  github.token  | true | |
-| verbose | undefined | `false` | false |
+| verbose | be more verbose | `false` | false |
+| nocheckout | try to not use checkout if repo already exists | `false` | false | 
 
 repositories format is:  
 `{repo name} | { branch or tag } | { destination dir} | OPTIONAL { depth } | OPTIONAL { auth token }`

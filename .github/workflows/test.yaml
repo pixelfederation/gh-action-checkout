@@ -31,6 +31,7 @@ jobs:
         id: clonetest
         uses: ./
         with:
+          nocheckout: true
           repositories: |
             kubernetes/ingress-nginx/ | main | k1 | 10
             kubernetes/ingress-nginx/ | main | k2 | 10
