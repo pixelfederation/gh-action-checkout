@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-import": "2.29.1",
     "eslint-config-prettier": "8.8.0",
     "@typescript-eslint/parser": "6.21.0",
     "@types/node": "^20.11.24",
