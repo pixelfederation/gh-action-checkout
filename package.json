@@ -1,6 +1,6 @@
 {
   "name": "@pixelfederation/gh-action-checkout",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "git clone action",
   "repository": "https://github.com/gh-action-checkout/",
   "author": "Tomas Hulata <thulata@pixelfederation.com>",

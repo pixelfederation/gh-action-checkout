@@ -26,7 +26,6 @@ jobs:
             kubernetes/ingress-nginx/ | main | k2 | 10
             kubernetes/ingress-nginx/ | main | k3 | 10
 
-
       - name: clone
         id: clonetest
         uses: ./
